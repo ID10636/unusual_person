@@ -1,0 +1,16 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+    {% if tasks is null %}
+        {% for task in tasks %}
+            <div>
+                <h2>{{task.title}}</h2><br>
+                <p>Yangi: {{task.created_at}}</p>
+                <a href="{% url 'tasks:task_detail' task.pk %}">Korish</a>
+            </div>
+        {% endfor %}
+    {% else %}
+
+    <p>Qlinadigon ishalar yoq</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'tasks/base.html' %}
+{% load static %}
+{% block content %}
+            <div>
+                <h2>{{task.title}}</h2><br>
+                <p>{{task.body}}</p>
+                <p>yaratish: {{task.created_at}}</p>
+                <p>Deadline: {{task.deadline}}</p>
+                <a href="{% url 'tasks:task_update' task.pk %}">sozlash</a>
+                <a href="{% url 'tasks:task_delete' task.pk %}">ochirish</a>
+            </div>
+{% endblock %}
